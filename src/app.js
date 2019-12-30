@@ -7,6 +7,7 @@ const geocode = require('./utils/geocode')
 
 // new Express application
 const app = express()
+const port = process.env.PORT || 3000
 
 // Define paths for Express config
 // generate path to the public folder - css/img/js folders can be referenced with absolute path relative to this directory
@@ -112,6 +113,6 @@ app.get('*', (req, res) => {
 // app.com/help
 // app.com/about
 
-app.listen(3000, () => {
-    console.log('Server started on 3000')
+app.listen(port, () => {
+    console.log('Server started on ' + port)
 })
