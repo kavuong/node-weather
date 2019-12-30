@@ -11,10 +11,13 @@ const forecast = (latitude, longitude, callback) => {
             dailySummary = body.daily.data[0].summary
             temperature = body.currently.temperature
             precipProb = body.currently.precipProbability
+            tempHigh = body.daily.data[0].temperatureHigh
+            tempLow = body.daily.data[0].temperatureLow
 
             callback(undefined, 
                 dailySummary + ". It is currently " + temperature + " degrees out. There is a " 
-                + precipProb + "% chance of rain.")
+                + precipProb + "% chance of rain. " + "High of " + tempHigh + " degrees and low of " +
+                tempLow + " expected today.")
         }
     })
 
